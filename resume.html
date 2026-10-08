@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#445CB1">
+<title>Resume — Channing Bloedel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#445CB1; --blue-deep:#2E3C7E; --gold:#FFD334;
+    --paper:#F6F5EF; --paper-raise:#FFFFFF; --ink:#1C2333; --ink-soft:#5B6478; --line:#E2DFD2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --blue:#4984fa; --blue-deep:#232C55; --paper:#12151D;
+      --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#12151D; --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B;
+    --blue:#4984fa; --blue-deep:#232C55;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',system-ui,sans-serif; line-height:1.6;}
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .stripe{height:12px; background:repeating-linear-gradient(115deg,var(--gold) 0 16px,var(--blue-deep) 16px 22px,transparent 22px 36px);}
+  .hero{background:var(--blue); color:#fff; padding:24px 28px 30px; position:relative; overflow:hidden;}
+  .hero::after{content:""; position:absolute; width:330px; height:330px; right:-95px; top:-155px;
+    border:36px solid rgba(255,211,52,.24); border-radius:50%; pointer-events:none;}
+  .hero-inner,.content,.footer-inner{max-width:1180px; margin:0 auto;}
+  .hero-inner{position:relative; z-index:1;}
+  .hero-heading{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:end; gap:14px 30px;}
+  .back-link{display:inline-block; margin-bottom:14px; color:#fff; text-decoration:none; font-size:.86rem; border-bottom:1px solid rgba(255,255,255,.45);}
+  .back-link:hover{border-bottom-color:#fff;}
+  .eyebrow{font-size:.72rem; letter-spacing:.1em; color:#E2E7FB; font-weight:700;}
+  h1{margin:2px 0 0; font-size:clamp(2.5rem,7vw,4.3rem); line-height:.98; letter-spacing:-.025em;}
+  .intro{max-width:42ch; margin:8px 0 0; color:#EDEFFA; font-size:.98rem;}
+  main{padding:24px 28px 48px;}
+  .content{width:100%;}
+  .resume-toolbar{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px; margin:0 0 14px;}
+  .resume-label{font-size:.78rem; font-weight:700; letter-spacing:.04em;}
+  .resume-actions{display:flex; flex-wrap:wrap; gap:10px;}
+  .resume-action{display:inline-block; padding:10px 16px; border:1px solid var(--blue); color:var(--blue);
+    text-decoration:none; font-size:.86rem; font-weight:700;}
+  .resume-action.primary{background:var(--gold); border-color:var(--gold); color:#2E3C7E;}
+  .resume-action.primary:hover{filter:brightness(.96);}
+  .resume-action:not(.primary):hover{background:var(--paper-raise);}
+  .resume-action:focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+  .resume-frame{padding:12px; background:var(--blue-deep); box-shadow:0 16px 44px rgba(28,35,51,.2);}
+  .resume-preview{width:100%; height:min(88vh,1200px); min-height:620px;
+    border:0; background:#fff; display:block;}
+  .upload-note{margin-top:18px; padding:12px 16px; border-left:3px solid var(--gold); background:var(--paper-raise);}
+  .upload-note strong{display:inline; margin-right:5px;}
+  .upload-note p{display:inline; margin:0; color:var(--ink-soft); font-size:.86rem;}
+  .footer{background:var(--blue-deep); color:#fff; padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px));}
+  .footer-inner{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;}
+  .footer a{font-size:.86rem; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.45);}
+  .footer a:hover{border-bottom-color:#fff;}
+  @media (max-width:600px){
+    .hero{padding:20px 20px 25px;}
+    main{padding:18px 14px 36px;}
+    .resume-frame{padding:6px;}
+    .resume-preview{height:78vh; min-height:520px;}
+    .resume-toolbar{align-items:flex-start;}
+    .resume-actions{width:100%;}
+    .resume-action{flex:1; text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div class="stripe" aria-hidden="true"></div>
+<header class="hero">
+  <div class="hero-inner">
+    <a class="back-link mono" href="index.html">&larr; Back to home</a>
+    <div class="eyebrow mono">CHANNING BLOEDEL &nbsp; / &nbsp; MECHANICAL ENGINEERING</div>
+    <div class="hero-heading">
+      <h1>Resume</h1>
+      <p class="intro">A closer look at the projects, internships, and education behind my engineering work.</p>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="content">
+    <section aria-label="Resume PDF">
+      <div class="resume-toolbar">
+        <span class="resume-label mono">FULL RESUME &nbsp;·&nbsp; PDF</span>
+        <div class="resume-actions">
+        <a class="resume-action primary" href="CHANNING_BLOEDEL_RESUME.pdf#toolbar=0&navpanes=0&view=FitH" target="_blank" rel="noopener">Open full size</a>
+        <a class="resume-action" href="CHANNING_BLOEDEL_RESUME.pdf" download="Channing-Bloedel-Resume.pdf">Download PDF</a>
+        </div>
+      </div>
+      <div class="resume-frame">
+      <iframe class="resume-preview" src="CHANNING_BLOEDEL_RESUME.pdf#toolbar=0&navpanes=0&view=FitH" title="Channing Bloedel resume PDF">
+        <p>Your browser can't display the PDF. <a href="CHANNING_BLOEDEL_RESUME.pdf">Open the resume PDF</a>.</p>
+      </iframe>
+      </div>
+      <div class="upload-note">
+        <strong>Updating the resume later</strong>
+        <p>Replace <span class="mono">CHANNING_BLOEDEL_RESUME.pdf</span> in the project folder with the new PDF, keeping the same filename.</p>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="eyebrow mono">CHANNING BLOEDEL</span>
+    <a class="mono" href="index.html">&larr; Back to home</a>
+  </div>
+</footer>
+</body>
+</html>

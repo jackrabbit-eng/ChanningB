@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#445CB1">
+<title>Travel Journal — Channing Bloedel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#445CB1; --blue-deep:#2E3C7E; --gold:#FFD334;
+    --paper:#F6F5EF; --paper-raise:#FFFFFF; --ink:#1C2333; --ink-soft:#5B6478; --line:#E2DFD2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --blue:#4984fa; --blue-deep:#232C55; --paper:#12151D;
+      --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#12151D; --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B;
+    --blue:#4984fa; --blue-deep:#232C55;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',system-ui,sans-serif; line-height:1.6;}
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .stripe{height:12px; background:repeating-linear-gradient(115deg,var(--gold) 0 16px,var(--blue-deep) 16px 22px,transparent 22px 36px);}
+  .hero{background:var(--blue); color:#fff; padding:48px 24px 42px;}
+  .hero-inner,.content,.footer-inner{max-width:900px; margin:0 auto;}
+  .back-link{display:inline-block; margin-bottom:30px; color:#fff; text-decoration:none; font-size:.86rem; border-bottom:1px solid rgba(255,255,255,.45);}
+  .back-link:hover{border-bottom-color:#fff;}
+  .eyebrow{font-size:.72rem; letter-spacing:.1em; color:#E2E7FB; font-weight:600;}
+  h1{max-width:700px; margin:8px 0 12px; font-size:clamp(2.5rem,8vw,4.5rem); line-height:1.04; letter-spacing:-.025em;}
+  .intro{max-width:58ch; margin:0; color:#EDEFFA; font-size:1.04rem;}
+  main{padding:34px 24px 76px;}
+  .content{width:100%;}
+  .section-heading{display:flex; align-items:center; gap:12px; margin:0 0 20px; font-size:.75rem; letter-spacing:.05em;}
+  .section-heading::after{content:""; height:2px; flex:1; background:var(--gold);}
+  .journal-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;}
+  .journal-entry{overflow:hidden; border:1px solid var(--line); border-radius:4px; background:var(--paper-raise);}
+  .journal-photo{width:100%; height:260px; display:block; object-fit:cover; background:var(--paper);}
+  .entry-copy{padding:16px 18px 18px;}
+  .entry-location{margin:0 0 5px; color:var(--blue); font-size:.68rem; letter-spacing:.08em; font-weight:700;}
+  .entry-copy h3{margin:0 0 6px; font-size:1.15rem; line-height:1.25;}
+  .entry-copy p:last-child{margin:0; color:var(--ink-soft); font-size:.88rem;}
+  .nova-section{margin-top:44px;}
+  .nova-grid{grid-template-columns:minmax(0,1fr);max-width:620px;}
+  .nova-grid .journal-photo{height:auto;max-height:480px;object-fit:contain;}
+  .selene-section{margin-top:44px;}
+  .selene-grid video{width:100%;height:260px;display:block;object-fit:contain;background:#111;}
+  .footer{background:var(--blue-deep); color:#fff; padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px));}
+  .footer-inner{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;}
+  .footer a{font-size:.86rem; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.45);}
+  .footer a:hover{border-bottom-color:#fff;}
+  @media (max-width:600px){
+    .hero{padding-top:34px;}
+    .journal-grid{grid-template-columns:1fr;}
+    .journal-photo{height:230px;}
+  }
+</style>
+</head>
+<body>
+<div class="stripe" aria-hidden="true"></div>
+<header class="hero">
+  <div class="hero-inner">
+    <a class="back-link mono" href="index.html">&larr; Back to home</a>
+    <div class="eyebrow mono">CHANNING'S TRAVEL JOURNAL</div>
+    <h1>Out exploring.</h1>
+    <p class="intro">A few hikes in Utah, good company, and places I’d like to remember.</p>
+  </div>
+</header>
+<main>
+  <div class="content">
+    <h2 class="section-heading mono">TRAVEL PHOTOS</h2>
+    <section class="journal-grid" aria-label="Travel photos">
+      <article class="journal-entry">
+        <img class="journal-photo" src="Travel/Angels%20Landing.JPG" alt="View from Angels Landing" loading="lazy">
+        <div class="entry-copy">
+          <p class="entry-location mono">ZION NATIONAL PARK</p>
+          <h3>Angels Landing</h3>
+        </div>
+      </article>
+      <article class="journal-entry">
+        <img class="journal-photo" src="Travel/Kolob%20Arch%20Canyon.JPG" alt="Kolob Arch Canyon" loading="lazy">
+        <div class="entry-copy">
+          <p class="entry-location mono">KOLOB ARCH CANYON</p>
+          <h3>Kolob Arch Canyon</h3>
+        </div>
+      </article>
+      <article class="journal-entry">
+        <img class="journal-photo" src="Travel/Kolob%20Arch%20Canyon%20Pt.2.JPG" alt="Another view of Kolob Arch Canyon" loading="lazy">
+        <div class="entry-copy">
+          <p class="entry-location mono">KOLOB ARCH CANYON</p>
+          <h3>Kolob Arch Canyon Pt. 2</h3>
+        </div>
+      </article>
+      <article class="journal-entry">
+        <img class="journal-photo" src="Travel/My%20Friend%20Kieren.JPG" alt="Channing's friend Kieren" loading="lazy">
+        <div class="entry-copy">
+          <p class="entry-location mono">TRAVEL MOMENT</p>
+          <h3>My Friend Kieren</h3>
+        </div>
+      </article>
+    </section>
+    <section class="nova-section" aria-labelledby="nova-heading">
+      <h2 class="section-heading mono" id="nova-heading">NOVA Beyond the competition</h2>
+      <section class="journal-grid nova-grid" aria-label="NOVA field photos">
+        <article class="journal-entry">
+          <img class="journal-photo" src="Travel/NOVA%20IPEX%20Visit.JPG" alt="Channing at the IPEX testing site during a visit to see lunar rover technology" loading="lazy">
+          <div class="entry-copy">
+            <p class="entry-location mono">NOVA FIELD VISIT</p>
+            <h3>IPEX and Swampworks</h3>
+            <p>For NOVA our team got to visit the awesome Swampworks lab and see SOTA technology!!! Got to touch the CLPS version and see their testing facilities in a private tour. Very cool indeed.</p>
+          </div>
+        </article>
+      </section>
+    </section>
+    <section class="selene-section" aria-labelledby="selene-heading">
+      <h2 class="section-heading mono" id="selene-heading">SELENE</h2>
+      <div class="journal-grid selene-grid" aria-label="SELENE project photos and videos">
+        <article class="journal-entry">
+          <img class="journal-photo" src="Travel/SELENE%20ELEVATOR.jpg" alt="SELENE elevator project" loading="lazy">
+          <div class="entry-copy">
+            <p class="entry-location mono">SELENE PROJECT</p>
+            <h3>Elevator</h3>
+            <p>The SELENE team with our RASC-AL shirts that Rachel and Rylie made. Ready for the beeeeeeeeaaaaach</p>
+          </div>
+        </article>
+        <article class="journal-entry">
+          <video src="Travel/SELENE%20INFLUENCING.mp4" autoplay muted loop controls playsinline preload="auto" aria-label="SELENE influencing project video"></video>
+          <div class="entry-copy">
+            <p class="entry-location mono">SELENE PROJECT</p>
+            <h3>Influencing</h3>
+            <p>There's this guy Johnny Stopo, and he does this bit where he embarrases, embaresses, embarrasses? his wife by &quot;influencing&quot; in public. Anyways I loved those videos so I took my opportunity to do it myself. All those people from MIT were goated had quite the time with them.</p>
+          </div>
+        </article>
+        <article class="journal-entry">
+          <img class="journal-photo" src="Travel/SELENE%20PRESENTATION.jpg" alt="SELENE project presentation" loading="lazy">
+          <div class="entry-copy">
+            <p class="entry-location mono">SELENE PROJECT</p>
+            <h3>Presentation</h3>
+            <p>This was the SELENE team when we were right about to present at the 2026 RASC-AL Finals Forum, if you look hard enough (2nd from the right) you can see my about to poop my pants.</p>
+          </div>
+        </article>
+        <article class="journal-entry">
+          <video src="Travel/SELENE%20RUNNING.mp4" autoplay muted loop controls playsinline preload="auto" aria-label="SELENE running project video"></video>
+          <div class="entry-copy">
+            <p class="entry-location mono">SELENE PROJECT</p>
+            <h3>Running</h3>
+            <p>This is me and Alex dierdsen running on the beach at the forum during break hours. It was a close race but yes, I'm humble enough to admit it...he did beat me.</p>
+          </div>
+        </article>
+        <article class="journal-entry">
+          <img class="journal-photo" src="Travel/SELENE%20TIRED.jpg" alt="SELENE project team after a long day" loading="lazy">
+          <div class="entry-copy">
+            <p class="entry-location mono">SELENE PROJECT</p>
+            <h3>Tired</h3>
+            <p>This was me at the forum literally passed out on a couch in the foye at a ripe hour of 11am.</p>
+          </div>
+        </article>
+        <article class="journal-entry">
+          <img class="journal-photo" src="Travel/SELENE%20VAB.jpg" alt="SELENE visit to the Vehicle Assembly Building" loading="lazy">
+          <div class="entry-copy">
+            <p class="entry-location mono">SELENE PROJECT</p>
+            <h3>VAB</h3>
+            <p>This is every Finalist Teams' participants and advisors at the VAB!</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="eyebrow mono">CHANNING BLOEDEL</span>
+    <a class="mono" href="index.html">&larr; Back to home</a>
+  </div>
+</footer>
+</body>
+</html>
