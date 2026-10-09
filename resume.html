@@ -12,25 +12,31 @@
   :root{
     --blue:#445CB1; --blue-deep:#2E3C7E; --gold:#FFD334;
     --paper:#F6F5EF; --paper-raise:#FFFFFF; --ink:#1C2333; --ink-soft:#5B6478; --line:#E2DFD2;
+    --violet:#8066E8;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --blue:#4984fa; --blue-deep:#232C55; --paper:#12151D;
-      --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B;
+      --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B; --violet:#A99BFF;
     }
   }
   :root[data-theme="dark"]{
     --paper:#12151D; --paper-raise:#191E29; --ink:#EDEDE6; --ink-soft:#AAB0BF; --line:#2A2F3B;
-    --blue:#4984fa; --blue-deep:#232C55;
+    --blue:#4984fa; --blue-deep:#232C55; --violet:#A99BFF;
   }
   *{box-sizing:border-box;}
   body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',system-ui,sans-serif; line-height:1.6;}
   a{color:inherit;}
   .mono{font-family:'IBM Plex Mono',monospace;}
-  .stripe{height:12px; background:repeating-linear-gradient(115deg,var(--gold) 0 16px,var(--blue-deep) 16px 22px,transparent 22px 36px);}
-  .hero{background:var(--blue); color:#fff; padding:24px 28px 30px; position:relative; overflow:hidden;}
-  .hero::after{content:""; position:absolute; width:330px; height:330px; right:-95px; top:-155px;
-    border:36px solid rgba(255,211,52,.24); border-radius:50%; pointer-events:none;}
+  .stripe{position:relative;z-index:1;height:12px;background-image:url("BannerTile.png");background-repeat:repeat-x;background-position:left center;background-size:auto 12px;}
+  .hero{position:relative;z-index:1;isolation:isolate;overflow:hidden;background:
+    radial-gradient(ellipse at 82% 8%,rgba(255,211,52,.18),transparent 27%),
+    linear-gradient(118deg,color-mix(in srgb,var(--blue-deep) 24%,var(--blue)) 0%,var(--blue) 58%,color-mix(in srgb,var(--blue) 78%,var(--violet)) 100%);
+    color:#fff;padding:24px 28px 30px;}
+  .hero::before,.hero::after{content:"";position:absolute;pointer-events:none;z-index:-1;}
+  .hero::before{width:430px;height:430px;right:-70px;top:-205px;border:1px solid rgba(255,255,255,.24);border-radius:50%;box-shadow:0 0 0 30px rgba(255,255,255,.035),0 0 0 72px rgba(255,255,255,.035);transform:rotate(-24deg) scaleY(.55);}
+  .hero::after{width:22px;height:22px;right:17%;bottom:24%;background:var(--gold);clip-path:polygon(50% 0,61% 37%,100% 50%,61% 63%,50% 100%,39% 63%,0 50%,39% 37%);filter:drop-shadow(0 0 12px rgba(255,211,52,.55));animation:star-drift 4s ease-in-out infinite;}
+  @keyframes star-drift{50%{transform:translateY(-10px) rotate(18deg);}}
   .hero-inner,.content,.footer-inner{max-width:1180px; margin:0 auto;}
   .hero-inner{position:relative; z-index:1;}
   .hero-heading{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:end; gap:14px 30px;}
@@ -39,7 +45,7 @@
   .eyebrow{font-size:.72rem; letter-spacing:.1em; color:#E2E7FB; font-weight:700;}
   h1{margin:2px 0 0; font-size:clamp(2.5rem,7vw,4.3rem); line-height:.98; letter-spacing:-.025em;}
   .intro{max-width:42ch; margin:8px 0 0; color:#EDEFFA; font-size:.98rem;}
-  main{padding:24px 28px 48px;}
+  main{position:relative;z-index:1;padding:24px 28px 48px;}
   .content{width:100%;}
   .resume-toolbar{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px; margin:0 0 14px;}
   .resume-label{font-size:.78rem; font-weight:700; letter-spacing:.04em;}
@@ -56,7 +62,7 @@
   .upload-note{margin-top:18px; padding:12px 16px; border-left:3px solid var(--gold); background:var(--paper-raise);}
   .upload-note strong{display:inline; margin-right:5px;}
   .upload-note p{display:inline; margin:0; color:var(--ink-soft); font-size:.86rem;}
-  .footer{background:var(--blue-deep); color:#fff; padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px));}
+  .footer{position:relative;z-index:1;background:var(--blue-deep); color:#fff; padding:22px 24px calc(22px + env(safe-area-inset-bottom,0px));}
   .footer-inner{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;}
   .footer a{font-size:.86rem; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.45);}
   .footer a:hover{border-bottom-color:#fff;}
@@ -69,10 +75,20 @@
     .resume-actions{width:100%;}
     .resume-action{flex:1; text-align:center;}
   }
+  .float-sprites{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .float-sprite{position:absolute;color:var(--gold);font-size:18px;line-height:1;opacity:.55;animation:sprite-drift 5s ease-in-out infinite;}
+  .float-sprite:nth-child(1){left:1.5vw;top:37vh;}
+  .float-sprite:nth-child(2){right:1.5vw;top:67vh;color:var(--blue);font-size:14px;animation-delay:-1.7s;}
+  .float-sprite:nth-child(3){left:2.5vw;top:86vh;color:var(--violet);font-size:12px;animation-delay:-3.2s;}
+  @keyframes sprite-drift{50%{transform:translate3d(0,-9px,0) rotate(14deg);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero::after,.float-sprite{animation:none;}
+  }
 </style>
 </head>
 <body>
 <div class="stripe" aria-hidden="true"></div>
+<div class="float-sprites" aria-hidden="true"><span class="float-sprite">✦</span><span class="float-sprite">✧</span><span class="float-sprite">✦</span></div>
 <header class="hero">
   <div class="hero-inner">
     <a class="back-link mono" href="index.html">&larr; Back to home</a>
